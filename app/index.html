@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">L</div>
+    <div>
+      <h1>LEONIDA TROPHY LEDGER</h1>
+      <p class="tagline">GTA VI trophy guide &amp; tracker — offline, open source, no ads</p>
+    </div>
+  </div>
+  <div class="stepper" id="stepper" aria-label="Your trophy count">
+    <span class="stepper-label">YOUR COUNT</span>
+    <button id="stepDown" type="button" aria-label="Untick last earned">−</button>
+    <strong id="countNow">0 / 55</strong>
+    <button id="stepUp" type="button" aria-label="Tick next trophy">+</button>
+  </div>
+</header>
+
+<section class="goalbar" aria-label="Road to the platinum">
+  <span class="goalbar-text">GOAL · 100% AND THE PLATINUM</span>
+  <div class="goalbar-track"><div class="goalbar-fill" id="goalFill" style="width:0%"></div></div>
+  <span class="goalbar-pct" id="goalPct">0%</span>
+</section>
+
+<p class="audit" id="auditStrip">Loading the ledger…</p>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" data-tab="checklist" class="active">Checklist</button>
+  <button type="button" data-tab="roadmap">Roadmap</button>
+  <button type="button" data-tab="missables">Missables</button>
+  <button type="button" data-tab="sources">Sources</button>
+</nav>
+
+<section class="controls" aria-label="Filters and settings">
+  <div class="pills" id="kindPills" role="group" aria-label="Filter by kind"></div>
+  <label class="grade-pick">Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="search">Search <input id="searchBox" type="search" placeholder="Trophy name…"></label>
+  <label class="spoiler"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers until earned</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json"></label>
+</section>
+
+<main class="layout">
+  <section class="col col-list" aria-label="Trophy checklist">
+    <h2 id="listHeading">Checklist</h2>
+    <div id="trophyList"></div>
+  </section>
+
+  <section class="col col-detail" aria-label="Trophy detail">
+    <div id="detail"></div>
+  </section>
+
+  <aside class="col col-sources" aria-label="Sources and progress">
+    <div class="card">
+      <h2>Progress</h2>
+      <p class="big-number"><span id="earnedCount">0</span><span class="muted"> / 55 earned</span></p>
+      <div class="mini-track"><div class="mini-fill" id="miniFill" style="width:0%"></div></div>
+      <p class="muted" id="gradeBreakdown"></p>
+      <p class="muted" id="missableLeft"></p>
+    </div>
+    <div class="card">
+      <h2>Next up · in roadmap order</h2>
+      <ol id="nextUp" class="nextup"></ol>
+    </div>
+    <div class="card">
+      <h2>Sources</h2>
+      <ol id="sourceCards" class="source-cards"></ol>
+      <p class="muted fineprint">Every guide on this page is written in our own words and cites its sources. Official trophy names and descriptions are shown as PlayStation publishes them.</p>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <p>Leonida Trophy Ledger — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. No Rockstar artwork or logo is used here. Data: the official PlayStation 5 trophy list (55 trophies). Guides cite PowerPyx, PlayStationTrophies.org, PSNProfiles, TrueTrophies and Exophase — never copied.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
